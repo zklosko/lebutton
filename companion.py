@@ -1,4 +1,7 @@
-import asyncio, logging, httpx
+import asyncio
+import logging
+
+import httpx
 
 log = logging.getLogger("companion")
 

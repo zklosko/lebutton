@@ -1,10 +1,12 @@
-from contextlib import asynccontextmanager
+import logging
 import time
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, HTTPException
-from config import load
+
 from buzzer import Buzzer
 from companion import Companion
-import logging
+from config import load
 
 logging.basicConfig(level=logging.INFO)
 
