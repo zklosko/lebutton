@@ -18,9 +18,17 @@ class Buzzer:
 
     def arm(self):
         # Refuse unless idle, clear pending/winner
+        if self.state != State.IDLE:
+            return
+        self.winner = None
+        self.pending = []
+        self.state = State.ARMED
 
     def reset(self):
         # Back to idle
+        self.winner = None
+        self.pending = []
+        self.state = State.IDLE
 
     def press(self, player_id: int, ts_ns: int):
         if player_id in self.locked_out:
@@ -33,6 +41,7 @@ class Buzzer:
             self.pending.append((ts_ns, player_id))
         elif self.state is State.IDLE:
             # false start from player
+            return
 
     async def _resolve(self):
         await asyncio.sleep(self.window_s)

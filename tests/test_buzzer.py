@@ -1,6 +1,6 @@
 import pytest
 import asyncio
-from ..buzzer import Buzzer, State
+from buzzer import Buzzer, State
 
 @pytest.mark.asyncio
 async def test_lowest_timestamp_wins_inside_window():

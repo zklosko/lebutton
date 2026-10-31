@@ -1,9 +1,9 @@
 from contextlib import asynccontextmanager
 import time
 from fastapi import FastAPI
-from .config import load
-from .buzzer import Buzzer
-from .companion import Companion
+from config import load
+from buzzer import Buzzer
+from companion import Companion
 
 cfg = load()
 companion = Companion(cfg.companion)
@@ -25,6 +25,10 @@ async def lifespan(app: FastAPI):
     #cancel it here
 
 app = FastAPI(lifespan=lifespan)
+
+@app.get("/health")
+def health():
+    return {"ok": True, "players": [p.name for p in cfg.players]}
 
 @app.post("/arm")
 def arm(): buzzer.arm(); return {"state": buzzer.state}
