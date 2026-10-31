@@ -7,5 +7,11 @@ companion:
   timeout_s: 0.5
 
 players:
-  - { id: 1, name: Red, gpio_line: 17, button: [1, 0, 0] } # page,row,col
-  - { id: 2, name: Blue, gpio_line: 27, button: [1, 0, 1] }
+  - { id: 1, name: 6thBoys, gpio_line: 17, button: [1, 0, 0] } # page,row,col
+  - { id: 2, name: 6thGirls, gpio_line: 27, button: [1, 1, 0] }
+  - { id: 3, name: 7thBoys, gpio_line: 17, button: [1, 0, 0] } # page,row,col
+  - { id: 4, name: 7thGirls, gpio_line: 27, button: [1, 0, 1] }
+  - { id: 5, name: 8thBoys, gpio_line: 17, button: [1, 0, 0] } # page,row,col
+  - { id: 6, name: 8thGirls, gpio_line: 27, button: [1, 0, 1] }
+  - { id: 7, name: Red, gpio_line: 17, button: [1, 0, 0] } # page,row,col
+  - { id: 8, name: Blue, gpio_line: 27, button: [1, 0, 1] }
